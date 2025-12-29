@@ -6,8 +6,9 @@ namespace Project_PBO_Desktop
 {
     public class DbConnection
     {
+        // Connection string untuk XAMPP - PERBAIKAN
         private static string connectionString =
-        "Server=localhost;Port=3306;Database=akademik_db;Uid=root;Pwd=;SslMode=none;";
+            "Server=localhost;Database=PBO_Siadik;Uid=root;Pwd=;";
 
         public static MySqlConnection GetConnection()
         {
@@ -18,8 +19,17 @@ namespace Project_PBO_Desktop
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Koneksi gagal: " + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "❌ Koneksi Database Gagal!\n\n" +
+                    "Error: " + ex.Message + "\n\n" +
+                    "Checklist:\n" +
+                    "☐ XAMPP MySQL sudah jalan?\n" +
+                    "☐ Database 'PBO_Siadik' sudah dibuat?\n" +
+                    "☐ Port 3306 tersedia?",
+                    "Error Koneksi",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
                 return null;
             }
         }
@@ -30,15 +40,30 @@ namespace Project_PBO_Desktop
             {
                 using (MySqlConnection conn = GetConnection())
                 {
+                    if (conn == null) return false;
+
                     conn.Open();
+
+                    // Test query
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT 1", conn))
+                    {
+                        cmd.ExecuteScalar();
+                    }
+
                     conn.Close();
                     return true;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Test koneksi gagal: " + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "❌ Test koneksi gagal!\n\n" +
+                    ex.Message + "\n\n" +
+                    ex.InnerException?.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
                 return false;
             }
         }

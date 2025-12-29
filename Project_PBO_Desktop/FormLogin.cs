@@ -17,11 +17,7 @@ namespace Project_PBO_Desktop
             // Disable login button until fields contain text
             buttonMasukLogin.Enabled = false;
 
-            if (!DatabaseHelper.TestConnection())
-            {
-                MessageBox.Show("Tidak dapat terhubung ke database!\nPastikan MySQL sudah berjalan.",
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        
         }
 
         private void textBoxUsername_TextChanged(object sender, EventArgs e)
@@ -66,15 +62,27 @@ namespace Project_PBO_Desktop
                         {
                             string role = result.ToString();
 
-                            switch (role.ToLower())
+                            switch (role.ToLower().Replace(" ", "-"))
                             {
-                                case "adm-univ":
+                                case "admin-univ":
+                                case "adminuniv":
                                     var admUniv = new FormAdmUniv();
                                     admUniv.Show();
                                     break;
-                                case "adm-prodi":
-                                    var admProdi = new FormAdmProdi();
-                                    admProdi.Show();
+                                case "admin-ilkom":
+                                case "adminilkom":
+                                    var admIlkom = new FormAdmIlkom();
+                                    admIlkom.Show();
+                                    break;
+                                case "admin-fis":
+                                case "adminfis":
+                                    var admFis = new FormAdmFis();
+                                    admFis.Show();
+                                    break;
+                                case "admin-bio":
+                                case "adminbio":
+                                    var admBio = new FormAdmBio();
+                                    admBio.Show();
                                     break;
                                 case "dosen":
                                     var dosen = new FormDosen();
@@ -84,8 +92,15 @@ namespace Project_PBO_Desktop
                                     var mhs = new FormMahasiswa();
                                     mhs.Show();
                                     break;
+                              
+                                default:
+                                    // unexpected role value
+                                    MessageBox.Show($"Role '{role}' is not recognized.", "Login Error",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    break;
+                                    
                             }
-                            this.Close();
+                            
                         }
                         else
                         {
