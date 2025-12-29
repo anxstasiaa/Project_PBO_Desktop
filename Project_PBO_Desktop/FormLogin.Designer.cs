@@ -38,7 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.checkBoxPw = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelX = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -119,6 +119,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(266, 384);
             this.panel3.TabIndex = 8;
+            
             // 
             // label3
             // 
@@ -144,7 +145,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.labelX);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -152,16 +153,17 @@
             this.panel2.Size = new System.Drawing.Size(748, 30);
             this.panel2.TabIndex = 7;
             // 
-            // label2
+            // labelX
             // 
-            this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(721, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(16, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "X";
+            this.labelX.AutoSize = true;
+            this.labelX.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelX.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX.Location = new System.Drawing.Point(721, 8);
+            this.labelX.Name = "labelX";
+            this.labelX.Size = new System.Drawing.Size(16, 16);
+            this.labelX.TabIndex = 1;
+            this.labelX.Text = "X";
+            this.labelX.Click += new System.EventHandler(this.labelX_Click);
             // 
             // label1
             // 
@@ -201,7 +203,7 @@
         public System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox checkBoxPw;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelX;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;

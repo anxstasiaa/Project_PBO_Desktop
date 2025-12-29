@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Windows.Forms;
 
 namespace Project_PBO_Desktop
@@ -15,6 +16,12 @@ namespace Project_PBO_Desktop
 
             // Disable login button until fields contain text
             buttonMasukLogin.Enabled = false;
+
+            if (!DatabaseHelper.TestConnection())
+            {
+                MessageBox.Show("Tidak dapat terhubung ke database!\nPastikan MySQL sudah berjalan.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void textBoxUsername_TextChanged(object sender, EventArgs e)
@@ -38,54 +45,72 @@ namespace Project_PBO_Desktop
 
         private void buttonMasukLogin_Click(object sender, EventArgs e)
         {
-            // Use trimmed non-null strings to avoid possible null reference issues
-            string username = (textBoxUsername.Text ?? string.Empty).Trim();
+            string username = textBoxUsername.Text?.Trim();
             string password = textBoxPassword.Text ?? string.Empty;
 
-            if (username.Equals("adm-univ", StringComparison.OrdinalIgnoreCase) && password == "123")
+            try
             {
-                MessageBox.Show("Login berhasil sebagai Admin Universitas.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                var f = new FormAdmUniv();
-                f.Show();
-                this.Close();
-                return;
-            }
+                using (MySqlConnection conn = DbConnection.GetConnection())
+                {
+                    conn.Open();
+                    string query = "SELECT role FROM users WHERE username = @username AND password = @password";
 
-            if (username.Equals("adm-prodi", StringComparison.OrdinalIgnoreCase) && password == "123")
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@username", username);
+                        cmd.Parameters.AddWithValue("@password", password); // Gunakan hashing di production!
+
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            string role = result.ToString();
+
+                            switch (role.ToLower())
+                            {
+                                case "adm-univ":
+                                    var admUniv = new FormAdmUniv();
+                                    admUniv.Show();
+                                    break;
+                                case "adm-prodi":
+                                    var admProdi = new FormAdmProdi();
+                                    admProdi.Show();
+                                    break;
+                                case "dosen":
+                                    var dosen = new FormDosen();
+                                    dosen.Show();
+                                    break;
+                                case "mhs":
+                                    var mhs = new FormMahasiswa();
+                                    mhs.Show();
+                                    break;
+                            }
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Username atau password salah!", "Login Gagal",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Login berhasil sebagai Admin Prodi.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                var f = new FormAdmProdi();
-                f.Show();
-                this.Close();
-                return;
+                MessageBox.Show("Error: " + ex.Message, "Database Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            if (username.Equals("dosen", StringComparison.OrdinalIgnoreCase) && password == "123")
-            {
-                MessageBox.Show("Login berhasil sebagai Dosen.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                var f = new FormDosen();
-                f.Show();
-                this.Close();
-                return;
-            }
-
-            if (username.Equals("mhs", StringComparison.OrdinalIgnoreCase) && password == "123")
-            {
-                MessageBox.Show("Login berhasil sebagai Mahasiswa.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                var f = new FormMahasiswa();
-                f.Show();
-                this.Close();
-                return;
-            }
-
-            MessageBox.Show(
-                "Username atau password salah.",
-                "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        // Keep these if designer wired them; otherwise you can remove them
         private void panel1_Paint(object sender, PaintEventArgs e) { }
 
-        private void label1_Click(object sender, EventArgs e) { }
+        private void labelX_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
+
+
+
+          

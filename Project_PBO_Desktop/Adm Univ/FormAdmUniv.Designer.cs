@@ -50,6 +50,7 @@
             this.labelAdmUniv.TabIndex = 0;
             this.labelAdmUniv.Text = "Admin Universitas";
             this.labelAdmUniv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelAdmUniv.Click += new System.EventHandler(this.labelAdmUniv_Click);
             // 
             // buttonManajemenProdi
             // 

@@ -34,7 +34,10 @@ namespace Project_PBO_Desktop
 
         private void FormAwal_Load(object sender, EventArgs e)
         {
-
+            if (DbConnection.TestConnection())
+            {
+                MessageBox.Show("Koneksi database berhasil!", "Info");
+            }
         }
     }
 }

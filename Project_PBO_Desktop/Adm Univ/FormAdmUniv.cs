@@ -41,5 +41,10 @@ namespace Project_PBO_Desktop
 
             this.Close();
         }
+
+        private void labelAdmUniv_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
