@@ -208,6 +208,7 @@
             this.Controls.Add(this.textBoxNIM);
             this.Name = "FormTambahMhs";
             this.Text = "FormTambahMahasiswa";
+            this.Load += new System.EventHandler(this.FormTambahMhs_Load);
             this.panelTambahBawah.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

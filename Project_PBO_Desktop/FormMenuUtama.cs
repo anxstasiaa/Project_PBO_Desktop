@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_PBO_Desktop
 {
-    public partial class PBO : Form
+    public partial class FormMenuUtama : Form
     {
-        public PBO()
+        public FormMenuUtama()
         {
             InitializeComponent();
         }
@@ -27,11 +27,17 @@ namespace Project_PBO_Desktop
             var loginForm = new FormLogin();
             loginForm.StartPosition = FormStartPosition.CenterScreen;
             loginForm.Show();
+
+            this.Hide();
         }
 
         private void linkLabelRegister_Click(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            var regisForm = new FormRegister();
+            regisForm.StartPosition = FormStartPosition.CenterScreen;
+            regisForm.Show();
 
+            this.Hide();
         }
 
         private void PBO_Load(object sender, EventArgs e)

@@ -6,9 +6,8 @@ namespace Project_PBO_Desktop
 {
     public class DbConnection
     {
-        // Connection string untuk XAMPP - PERBAIKAN
-        private static string connectionString =
-            "Server=localhost;Database=PBO_Siadik;Uid=root;Pwd=;";
+        // Connection string untuk XAMPP 
+        private static string connectionString = "Server=localhost;Database=PBO_Siadik;Uid=root;Pwd=;";
 
         public static MySqlConnection GetConnection()
         {

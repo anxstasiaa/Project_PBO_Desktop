@@ -16,8 +16,6 @@ namespace Project_PBO_Desktop
 
             // Disable login button until fields contain text
             buttonMasukLogin.Enabled = false;
-
-        
         }
 
         private void textBoxUsername_TextChanged(object sender, EventArgs e)
@@ -34,7 +32,6 @@ namespace Project_PBO_Desktop
 
         private void checkBoxPw_Changed(object sender, EventArgs e)
         {
-            // Toggle mask when checkbox changes (use the designer-declared checkBoxPw)
             if (textBoxPassword != null && checkBoxPw != null)
                 textBoxPassword.UseSystemPasswordChar = !checkBoxPw.Checked;
         }
@@ -48,72 +45,130 @@ namespace Project_PBO_Desktop
             {
                 using (MySqlConnection conn = DbConnection.GetConnection())
                 {
+                    if (conn == null)
+                    {
+                        MessageBox.Show("Koneksi database gagal!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                     conn.Open();
-                    string query = "SELECT role FROM users WHERE username = @username AND password = @password";
+
+                    // Query yang disesuaikan dengan struktur database baru
+                    string query = @"SELECT id_user, role, id_prodi, nim, nidn 
+                                   FROM users 
+                                   WHERE email = @username AND password = @password";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@username", username);
-                        cmd.Parameters.AddWithValue("@password", password); // Gunakan hashing di production!
+                        cmd.Parameters.AddWithValue("@password", password);
 
-                        object result = cmd.ExecuteScalar();
-
-                        if (result != null)
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            string role = result.ToString();
-
-                            switch (role.ToLower().Replace(" ", "-"))
+                            if (reader.Read())
                             {
-                                case "admin-univ":
-                                case "adminuniv":
-                                    var admUniv = new FormAdmUniv();
-                                    admUniv.Show();
-                                    break;
-                                case "admin-ilkom":
-                                case "adminilkom":
-                                    var admIlkom = new FormAdmIlkom();
-                                    admIlkom.Show();
-                                    break;
-                                case "admin-fis":
-                                case "adminfis":
-                                    var admFis = new FormAdmFis();
-                                    admFis.Show();
-                                    break;
-                                case "admin-bio":
-                                case "adminbio":
-                                    var admBio = new FormAdmBio();
-                                    admBio.Show();
-                                    break;
-                                case "dosen":
-                                    var dosen = new FormDosen();
-                                    dosen.Show();
-                                    break;
-                                case "mhs":
-                                    var mhs = new FormMahasiswa();
-                                    mhs.Show();
-                                    break;
-                              
-                                default:
-                                    // unexpected role value
-                                    MessageBox.Show($"Role '{role}' is not recognized.", "Login Error",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    break;
-                                    
+                                string role = reader["role"].ToString();
+                                int userId = Convert.ToInt32(reader["id_user"]);
+
+                                // Ambil data tambahan berdasarkan role
+                                object idProdi = reader["id_prodi"];
+                                object nim = reader["nim"];
+                                object nidn = reader["nidn"];
+
+                                // Tutup reader sebelum membuka form baru
+                                reader.Close();
+                                conn.Close();
+
+                                // Sembunyikan form login
+                                this.Hide();
+
+                                // Arahkan ke form sesuai role
+                                switch (role.ToLower())
+                                {
+                                    case "admin-univ":
+                                        var admUniv = new FormAdmUniv();
+                                        admUniv.FormClosed += (s, args) => this.Close();
+                                        admUniv.Show();
+                                        break;
+
+                                    case "admin-prodi":
+                                        // Cek id_prodi untuk menentukan form admin prodi mana
+                                        if (idProdi != DBNull.Value)
+                                        {
+                                            int prodiId = Convert.ToInt32(idProdi);
+                                            Form formAdmProdi = null;
+
+                                            switch (prodiId)
+                                            {
+                                                case 11111: // Ilmu Komputer
+                                                    formAdmProdi = new FormAdmProdi();
+                                                    formAdmProdi.StartPosition = FormStartPosition.CenterScreen;
+                                                    break;
+                                                case 22222: // Biologi
+                                                    formAdmProdi = new FormAdmProdi();
+                                                    formAdmProdi.StartPosition = FormStartPosition.CenterScreen;
+                                                    break;
+                                                case 33333: // Fisika
+                                                    formAdmProdi = new FormAdmProdi();
+                                                    formAdmProdi.StartPosition = FormStartPosition.CenterScreen;
+                                                    break;
+                                                default:
+                                                    formAdmProdi = new FormAdmProdi();
+                                                    break;
+                                            }
+
+                                            if (formAdmProdi != null)
+                                            {
+                                                formAdmProdi.FormClosed += (s, args) => this.Close();
+                                                formAdmProdi.Show();
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Data prodi tidak valid!", "Error",
+                                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                            this.Show();
+                                        }
+                                        break;
+
+                                    case "dosen":
+                                        var formDosen = new FormDosen();
+                                        formDosen.StartPosition = FormStartPosition.CenterScreen;
+                                        formDosen.FormClosed += (s, args) => this.Close();
+                                        formDosen.Show();
+                                        break;
+
+                                    case "mahasiswa":
+                                        var formMhs = new FormMahasiswa();
+                                        formMhs.StartPosition = FormStartPosition.CenterScreen;
+                                        formMhs.FormClosed += (s, args) => this.Close();
+                                        formMhs.Show();
+                                        break;
+
+                                    default:
+                                        MessageBox.Show($"Role '{role}' tidak dikenali!", "Login Error",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        this.Show();
+                                        break;
+                                }
                             }
-                            
-                        }
-                        else
-                        {
-                            MessageBox.Show("Username atau password salah!", "Login Gagal",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            else
+                            {
+                                MessageBox.Show("Email atau password salah!", "Login Gagal",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                textBoxPassword.Clear();
+                                textBoxPassword.Focus();
+                            }
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Database Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message + "\n\nDetail: " + ex.StackTrace,
+                    "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Show();
             }
         }
 
@@ -125,7 +180,3 @@ namespace Project_PBO_Desktop
         }
     }
 }
-
-
-
-          

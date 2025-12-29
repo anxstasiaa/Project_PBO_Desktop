@@ -1,13 +1,13 @@
 ﻿namespace Project_PBO_Desktop
 {
-    partial class PBO
+    partial class FormMenuUtama : System.Windows.Forms.Form
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary>   
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PBO));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuUtama));
             this.labelMenuUtama = new System.Windows.Forms.Label();
             this.linkLabelLogin = new System.Windows.Forms.LinkLabel();
             this.linkLabelRegister = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelMenuUtama
@@ -40,7 +42,6 @@
             this.labelMenuUtama.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelMenuUtama.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMenuUtama.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.labelMenuUtama.Image = ((System.Drawing.Image)(resources.GetObject("labelMenuUtama.Image")));
             this.labelMenuUtama.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelMenuUtama.Location = new System.Drawing.Point(0, 0);
             this.labelMenuUtama.Name = "labelMenuUtama";
@@ -72,18 +73,31 @@
             this.linkLabelRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.linkLabelRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRegister_Click);
             // 
-            // PBO
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.ImageLocation = "";
+            this.pictureBox1.Location = new System.Drawing.Point(312, 155);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(170, 166);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // FormMenuUtama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(814, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.linkLabelRegister);
             this.Controls.Add(this.linkLabelLogin);
             this.Controls.Add(this.labelMenuUtama);
-            this.Name = "PBO";
+            this.Name = "FormMenuUtama";
             this.Text = "PBO";
             this.Load += new System.EventHandler(this.PBO_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -92,6 +106,7 @@
         private System.Windows.Forms.Label labelMenuUtama;
         private System.Windows.Forms.LinkLabel linkLabelLogin;
         private System.Windows.Forms.LinkLabel linkLabelRegister;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

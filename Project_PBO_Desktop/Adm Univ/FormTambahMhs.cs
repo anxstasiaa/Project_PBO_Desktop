@@ -90,6 +90,11 @@ namespace Project_PBO_Desktop
         {
 
         }
+
+        private void FormTambahMhs_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -96,24 +96,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adm Prodi\FormAdmBio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Adm Prodi\FormAdmBio.Designer.cs">
-      <DependentUpon>FormAdmBio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Adm Prodi\FormAdmIlkom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Adm Prodi\FormAdmIlkom.Designer.cs">
-      <DependentUpon>FormAdmIlkom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Adm Prodi\FormAdmFis.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Adm Prodi\FormAdmFis.Designer.cs">
-      <DependentUpon>FormAdmFis.cs</DependentUpon>
-    </Compile>
     <Compile Include="Adm Prodi\FormAdmProdi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,7 +144,7 @@
     <Compile Include="Adm Univ\FormUbahMhs.Designer.cs">
       <DependentUpon>FormUbahMhs.cs</DependentUpon>
     </Compile>
-    <Compile Include="DbConnestions.cs" />
+    <Compile Include="DbConnections.cs" />
     <Compile Include="Dosen\FormDosen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +205,12 @@
     <Compile Include="FormMenuUtama.Designer.cs">
       <DependentUpon>FormMenuUtama.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegister.Designer.cs">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mhs\FormKHS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,15 +243,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Adm Prodi\FormAdmBio.resx">
-      <DependentUpon>FormAdmBio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Adm Prodi\FormAdmFis.resx">
-      <DependentUpon>FormAdmFis.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Adm Prodi\FormAdmIlkom.resx">
-      <DependentUpon>FormAdmIlkom.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Adm Prodi\FormAdmProdi.resx">
       <DependentUpon>FormAdmProdi.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegister.resx">
+      <DependentUpon>FormRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mhs\FormKHS.resx">
       <DependentUpon>FormKHS.cs</DependentUpon>
