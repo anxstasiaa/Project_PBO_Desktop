@@ -21,5 +21,24 @@ namespace Project_PBO_Desktop
         {
 
         }
+
+        private void labelX_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonDaftarProdi_Click(object sender, EventArgs e)
+        {
+            var dp = new FormDaftarProdi();
+            dp.StartPosition = FormStartPosition.CenterScreen;
+            dp.Show();
+        }
+
+        private void buttonTambahProdi_Click(object sender, EventArgs e)
+        {
+            var tp = new FormTambahProdi();
+            tp.StartPosition = FormStartPosition.CenterScreen;
+            tp.Show();
+        }
     }
 }

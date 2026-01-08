@@ -16,5 +16,10 @@ namespace Project_PBO_Desktop
         {
             InitializeComponent();
         }
+
+        private void FormKelolaMK_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

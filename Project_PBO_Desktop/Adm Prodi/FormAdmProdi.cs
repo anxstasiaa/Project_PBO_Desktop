@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySqlX.XDevAPI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -61,6 +62,22 @@ namespace Project_PBO_Desktop
         }
 
         private void FormAdmProdi_Load(object sender, EventArgs e)
+        {
+            // Show both role and prodi in a single status label.
+            ToolStripStatusLabel1.Text = $"Login sebagai: {Session.Peran} | Prodi: {Session.Prodi}";
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

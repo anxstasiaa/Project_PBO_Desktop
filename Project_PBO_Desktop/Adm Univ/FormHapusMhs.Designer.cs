@@ -28,87 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxNIM = new System.Windows.Forms.TextBox();
-            this.labelHapusMhs = new System.Windows.Forms.Label();
-            this.labelNIM = new System.Windows.Forms.Label();
-            this.panelTambahBawah = new System.Windows.Forms.Panel();
             this.buttonKembali = new System.Windows.Forms.Button();
-            this.panelTambahBawah.SuspendLayout();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelX = new System.Windows.Forms.Label();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBoxNIM
-            // 
-            this.textBoxNIM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxNIM.Location = new System.Drawing.Point(245, 230);
-            this.textBoxNIM.Name = "textBoxNIM";
-            this.textBoxNIM.Size = new System.Drawing.Size(307, 22);
-            this.textBoxNIM.TabIndex = 1;
-            // 
-            // labelHapusMhs
-            // 
-            this.labelHapusMhs.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.labelHapusMhs.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelHapusMhs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHapusMhs.Location = new System.Drawing.Point(0, 0);
-            this.labelHapusMhs.Name = "labelHapusMhs";
-            this.labelHapusMhs.Size = new System.Drawing.Size(800, 57);
-            this.labelHapusMhs.TabIndex = 17;
-            this.labelHapusMhs.Text = "Hapus Mahasiswa";
-            this.labelHapusMhs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelNIM
-            // 
-            this.labelNIM.AutoSize = true;
-            this.labelNIM.Location = new System.Drawing.Point(298, 202);
-            this.labelNIM.Name = "labelNIM";
-            this.labelNIM.Size = new System.Drawing.Size(214, 16);
-            this.labelNIM.TabIndex = 18;
-            this.labelNIM.Text = "Masukkan NIM yang ingin dihapus:";
-            // 
-            // panelTambahBawah
-            // 
-            this.panelTambahBawah.BackColor = System.Drawing.Color.SlateGray;
-            this.panelTambahBawah.Controls.Add(this.buttonKembali);
-            this.panelTambahBawah.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelTambahBawah.Location = new System.Drawing.Point(0, 409);
-            this.panelTambahBawah.Name = "panelTambahBawah";
-            this.panelTambahBawah.Size = new System.Drawing.Size(800, 41);
-            this.panelTambahBawah.TabIndex = 19;
             // 
             // buttonKembali
             // 
             this.buttonKembali.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.buttonKembali.Location = new System.Drawing.Point(692, 6);
+            this.buttonKembali.Location = new System.Drawing.Point(683, 371);
             this.buttonKembali.Name = "buttonKembali";
             this.buttonKembali.Size = new System.Drawing.Size(96, 32);
             this.buttonKembali.TabIndex = 9;
             this.buttonKembali.Text = "Kembali";
             this.buttonKembali.UseVisualStyleBackColor = false;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.labelX);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1178, 41);
+            this.panel2.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(374, 21);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Sistem Akademik Universitas | Hapus Mahasiswa";
+            // 
+            // labelX
+            // 
+            this.labelX.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelX.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX.Location = new System.Drawing.Point(1140, 9);
+            this.labelX.Name = "labelX";
+            this.labelX.Size = new System.Drawing.Size(26, 23);
+            this.labelX.TabIndex = 2;
+            this.labelX.Text = "X";
+            this.labelX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormHapusMhs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panelTambahBawah);
-            this.Controls.Add(this.labelNIM);
-            this.Controls.Add(this.labelHapusMhs);
-            this.Controls.Add(this.textBoxNIM);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(227)))), ((int)(((byte)(247)))));
+            this.ClientSize = new System.Drawing.Size(1178, 673);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.buttonKembali);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormHapusMhs";
             this.Text = "FormHapusMhs";
-            this.panelTambahBawah.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBoxNIM;
-        private System.Windows.Forms.Label labelHapusMhs;
-        private System.Windows.Forms.Label labelNIM;
-        private System.Windows.Forms.Panel panelTambahBawah;
         private System.Windows.Forms.Button buttonKembali;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelX;
     }
 }

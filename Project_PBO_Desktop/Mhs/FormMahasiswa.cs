@@ -57,6 +57,16 @@ namespace Project_PBO_Desktop
         {
 
         }
+
+        private void dataGridViewKK_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -21,5 +21,24 @@ namespace Project_PBO_Desktop
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buttonTambahProdi_Click(object sender, EventArgs e)
+        {
+            var tambahprodi = new FormTambahProdi();
+            tambahprodi.StartPosition = FormStartPosition.CenterScreen;
+            tambahprodi.Show();
+
+            this.Close();
+        }
+
+        private void labelX_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

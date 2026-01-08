@@ -46,5 +46,10 @@ namespace Project_PBO_Desktop
         {
 
         }
+
+        private void panelDashboard_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

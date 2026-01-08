@@ -15,6 +15,7 @@ namespace Project_PBO_Desktop
         public FormAwal()
         {
             InitializeComponent();
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -38,6 +39,8 @@ namespace Project_PBO_Desktop
 
         private void FormAwal_Load(object sender, EventArgs e)
         {
+            
+
             // Test koneksi saat aplikasi pertama kali dibuka
             //if (DbConnection.TestConnection())
             //{
@@ -62,7 +65,7 @@ namespace Project_PBO_Desktop
             //        MessageBoxButtons.OK,
             //        MessageBoxIcon.Warning
             //   );
-            }
+        }
         }
     }
 

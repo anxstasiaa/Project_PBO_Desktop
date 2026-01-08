@@ -81,9 +81,9 @@
             // 
             // buttonMasukLogin
             // 
-            this.buttonMasukLogin.BackColor = System.Drawing.Color.MidnightBlue;
+            this.buttonMasukLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(174)))), ((int)(((byte)(229)))));
             this.buttonMasukLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonMasukLogin.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonMasukLogin.ForeColor = System.Drawing.Color.MidnightBlue;
             this.buttonMasukLogin.Location = new System.Drawing.Point(18, 325);
             this.buttonMasukLogin.Name = "buttonMasukLogin";
             this.buttonMasukLogin.Size = new System.Drawing.Size(236, 36);
@@ -94,7 +94,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(227)))), ((int)(((byte)(247)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
@@ -107,7 +107,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(199)))), ((int)(((byte)(213)))));
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.labelUsername);
             this.panel3.Controls.Add(this.labelPassword);
@@ -115,11 +115,10 @@
             this.panel3.Controls.Add(this.textBoxPassword);
             this.panel3.Controls.Add(this.buttonMasukLogin);
             this.panel3.Controls.Add(this.textBoxUsername);
-            this.panel3.Location = new System.Drawing.Point(249, 53);
+            this.panel3.Location = new System.Drawing.Point(238, 53);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(266, 384);
             this.panel3.TabIndex = 8;
-            
             // 
             // label3
             // 

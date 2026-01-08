@@ -90,7 +90,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(199)))), ((int)(((byte)(213)))));
             this.panel3.Controls.Add(this.comboBoxProdi);
             this.panel3.Controls.Add(this.textBoxNIDN);
             this.panel3.Controls.Add(this.textBoxNIM);
@@ -117,6 +117,7 @@
             // 
             // comboBoxProdi
             // 
+            this.comboBoxProdi.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxProdi.FormattingEnabled = true;
             this.comboBoxProdi.Location = new System.Drawing.Point(469, 203);
             this.comboBoxProdi.Name = "comboBoxProdi";
@@ -125,20 +126,23 @@
             // 
             // textBoxNIDN
             // 
+            this.textBoxNIDN.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNIDN.Location = new System.Drawing.Point(469, 140);
             this.textBoxNIDN.Name = "textBoxNIDN";
-            this.textBoxNIDN.Size = new System.Drawing.Size(222, 22);
+            this.textBoxNIDN.Size = new System.Drawing.Size(222, 23);
             this.textBoxNIDN.TabIndex = 18;
             // 
             // textBoxNIM
             // 
+            this.textBoxNIM.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNIM.Location = new System.Drawing.Point(469, 100);
             this.textBoxNIM.Name = "textBoxNIM";
-            this.textBoxNIM.Size = new System.Drawing.Size(222, 22);
+            this.textBoxNIM.Size = new System.Drawing.Size(222, 23);
             this.textBoxNIM.TabIndex = 17;
             // 
             // labelProdi
             // 
+            this.labelProdi.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProdi.Location = new System.Drawing.Point(389, 180);
             this.labelProdi.Name = "labelProdi";
             this.labelProdi.Size = new System.Drawing.Size(84, 68);
@@ -150,15 +154,17 @@
             // labelNIDN
             // 
             this.labelNIDN.AutoSize = true;
+            this.labelNIDN.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNIDN.Location = new System.Drawing.Point(408, 146);
             this.labelNIDN.Name = "labelNIDN";
-            this.labelNIDN.Size = new System.Drawing.Size(43, 16);
+            this.labelNIDN.Size = new System.Drawing.Size(40, 16);
             this.labelNIDN.TabIndex = 15;
             this.labelNIDN.Text = "NIDN:";
             // 
             // labelNIM
             // 
             this.labelNIM.AutoSize = true;
+            this.labelNIM.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNIM.Location = new System.Drawing.Point(408, 103);
             this.labelNIM.Name = "labelNIM";
             this.labelNIM.Size = new System.Drawing.Size(34, 16);
@@ -168,14 +174,16 @@
             // labelRole
             // 
             this.labelRole.AutoSize = true;
+            this.labelRole.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRole.Location = new System.Drawing.Point(18, 264);
             this.labelRole.Name = "labelRole";
-            this.labelRole.Size = new System.Drawing.Size(46, 16);
+            this.labelRole.Size = new System.Drawing.Size(45, 16);
             this.labelRole.TabIndex = 13;
             this.labelRole.Text = "Peran:";
             // 
             // comboBoxRole
             // 
+            this.comboBoxRole.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRole.FormattingEnabled = true;
             this.comboBoxRole.Location = new System.Drawing.Point(124, 256);
             this.comboBoxRole.Name = "comboBoxRole";
@@ -186,17 +194,19 @@
             // labelPw
             // 
             this.labelPw.AutoSize = true;
+            this.labelPw.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPw.Location = new System.Drawing.Point(18, 168);
             this.labelPw.Name = "labelPw";
-            this.labelPw.Size = new System.Drawing.Size(70, 16);
+            this.labelPw.Size = new System.Drawing.Size(67, 16);
             this.labelPw.TabIndex = 8;
             this.labelPw.Text = "Password:";
             // 
             // labelKonfirPw
             // 
-            this.labelKonfirPw.Location = new System.Drawing.Point(3, 196);
+            this.labelKonfirPw.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKonfirPw.Location = new System.Drawing.Point(18, 196);
             this.labelKonfirPw.Name = "labelKonfirPw";
-            this.labelKonfirPw.Size = new System.Drawing.Size(103, 59);
+            this.labelKonfirPw.Size = new System.Drawing.Size(68, 59);
             this.labelKonfirPw.TabIndex = 9;
             this.labelKonfirPw.Text = "Konfirmasi Password:";
             this.labelKonfirPw.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -204,34 +214,37 @@
             // 
             // textBoxKonfirPw
             // 
+            this.textBoxKonfirPw.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxKonfirPw.Location = new System.Drawing.Point(124, 214);
             this.textBoxKonfirPw.Name = "textBoxKonfirPw";
-            this.textBoxKonfirPw.Size = new System.Drawing.Size(219, 22);
+            this.textBoxKonfirPw.Size = new System.Drawing.Size(219, 23);
             this.textBoxKonfirPw.TabIndex = 11;
             // 
             // textBoxPassword
             // 
+            this.textBoxPassword.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.Location = new System.Drawing.Point(124, 165);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(222, 22);
+            this.textBoxPassword.Size = new System.Drawing.Size(222, 23);
             this.textBoxPassword.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(232, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(252, 29);
+            this.label3.Size = new System.Drawing.Size(272, 28);
             this.label3.TabIndex = 7;
             this.label3.Text = "Register Your Account";
             // 
             // labelNamaLengkap
             // 
             this.labelNamaLengkap.AutoSize = true;
-            this.labelNamaLengkap.Location = new System.Drawing.Point(15, 88);
+            this.labelNamaLengkap.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNamaLengkap.Location = new System.Drawing.Point(18, 88);
             this.labelNamaLengkap.Name = "labelNamaLengkap";
-            this.labelNamaLengkap.Size = new System.Drawing.Size(103, 16);
+            this.labelNamaLengkap.Size = new System.Drawing.Size(96, 16);
             this.labelNamaLengkap.TabIndex = 1;
             this.labelNamaLengkap.Text = "Nama Lengkap:";
             this.labelNamaLengkap.Click += new System.EventHandler(this.labelUsername_Click);
@@ -239,18 +252,20 @@
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
+            this.labelEmail.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmail.Location = new System.Drawing.Point(18, 128);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(44, 16);
+            this.labelEmail.Size = new System.Drawing.Size(43, 16);
             this.labelEmail.TabIndex = 2;
             this.labelEmail.Text = "Email:";
             // 
             // checkBoxPw
             // 
             this.checkBoxPw.AutoSize = true;
+            this.checkBoxPw.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxPw.Location = new System.Drawing.Point(593, 281);
             this.checkBoxPw.Name = "checkBoxPw";
-            this.checkBoxPw.Size = new System.Drawing.Size(125, 20);
+            this.checkBoxPw.Size = new System.Drawing.Size(120, 20);
             this.checkBoxPw.TabIndex = 6;
             this.checkBoxPw.Text = "Show Password";
             this.checkBoxPw.UseVisualStyleBackColor = true;
@@ -258,28 +273,31 @@
             // 
             // textBoxEmail
             // 
+            this.textBoxEmail.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail.Location = new System.Drawing.Point(124, 125);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(222, 22);
+            this.textBoxEmail.Size = new System.Drawing.Size(222, 23);
             this.textBoxEmail.TabIndex = 4;
             // 
             // buttonRegister
             // 
-            this.buttonRegister.BackColor = System.Drawing.Color.MidnightBlue;
+            this.buttonRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(174)))), ((int)(((byte)(229)))));
             this.buttonRegister.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRegister.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonRegister.ForeColor = System.Drawing.Color.MidnightBlue;
             this.buttonRegister.Location = new System.Drawing.Point(497, 337);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(236, 36);
             this.buttonRegister.TabIndex = 5;
             this.buttonRegister.Text = "DAFTAR";
             this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // textBoxNamaLengkap
             // 
+            this.textBoxNamaLengkap.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNamaLengkap.Location = new System.Drawing.Point(124, 88);
             this.textBoxNamaLengkap.Name = "textBoxNamaLengkap";
-            this.textBoxNamaLengkap.Size = new System.Drawing.Size(222, 22);
+            this.textBoxNamaLengkap.Size = new System.Drawing.Size(222, 23);
             this.textBoxNamaLengkap.TabIndex = 3;
             this.textBoxNamaLengkap.TextChanged += new System.EventHandler(this.textBoxUsername_TextChanged);
             // 
@@ -287,7 +305,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(227)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(830, 507);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);

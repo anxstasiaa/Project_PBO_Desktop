@@ -38,9 +38,9 @@
             // 
             // labelMenuUtama
             // 
-            this.labelMenuUtama.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.labelMenuUtama.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(199)))), ((int)(((byte)(213)))));
             this.labelMenuUtama.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelMenuUtama.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMenuUtama.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMenuUtama.ForeColor = System.Drawing.Color.MidnightBlue;
             this.labelMenuUtama.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelMenuUtama.Location = new System.Drawing.Point(0, 0);
@@ -53,7 +53,9 @@
             // 
             // linkLabelLogin
             // 
-            this.linkLabelLogin.Location = new System.Drawing.Point(147, 373);
+            this.linkLabelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelLogin.LinkColor = System.Drawing.Color.MidnightBlue;
+            this.linkLabelLogin.Location = new System.Drawing.Point(145, 403);
             this.linkLabelLogin.Name = "linkLabelLogin";
             this.linkLabelLogin.Size = new System.Drawing.Size(163, 27);
             this.linkLabelLogin.TabIndex = 2;
@@ -64,7 +66,9 @@
             // 
             // linkLabelRegister
             // 
-            this.linkLabelRegister.Location = new System.Drawing.Point(493, 373);
+            this.linkLabelRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelRegister.LinkColor = System.Drawing.Color.MidnightBlue;
+            this.linkLabelRegister.Location = new System.Drawing.Point(492, 403);
             this.linkLabelRegister.Name = "linkLabelRegister";
             this.linkLabelRegister.Size = new System.Drawing.Size(163, 27);
             this.linkLabelRegister.TabIndex = 3;
@@ -79,7 +83,7 @@
             this.pictureBox1.ImageLocation = "";
             this.pictureBox1.Location = new System.Drawing.Point(312, 155);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(170, 166);
+            this.pictureBox1.Size = new System.Drawing.Size(178, 203);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -88,12 +92,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(814, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(227)))), ((int)(((byte)(247)))));
+            this.ClientSize = new System.Drawing.Size(814, 492);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.linkLabelRegister);
             this.Controls.Add(this.linkLabelLogin);
             this.Controls.Add(this.labelMenuUtama);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMenuUtama";
             this.Text = "PBO";
             this.Load += new System.EventHandler(this.PBO_Load);

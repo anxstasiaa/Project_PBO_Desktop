@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project_PBO_Desktop
@@ -16,14 +9,6 @@ namespace Project_PBO_Desktop
         {
             InitializeComponent();
 
-            comboBoxJenisKelamin.Items.Clear();
-            comboBoxJenisKelamin.Items.AddRange(new object[]
-            {
-                "Laki-laki",
-                "Perempuan"
-            });
-            comboBoxJenisKelamin.DropDownStyle = ComboBoxStyle.DropDownList;
-
             comboBoxProdi.Items.Clear();
             comboBoxProdi.Items.AddRange(new object[]
             {
@@ -33,16 +18,8 @@ namespace Project_PBO_Desktop
                 "Kedokteran"
             });
             comboBoxProdi.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
 
-        private void comboBoxJenisKelamin_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            comboBoxJenisKelamin.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
-        private void comboBoxProdi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            comboBoxProdi.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.buttonSimpan.Click += new EventHandler(this.buttonSimpan_Click);
         }
 
         private void buttonKembali_Click(object sender, EventArgs e)
@@ -50,11 +27,15 @@ namespace Project_PBO_Desktop
             this.Close();
         }
 
-        private void buttonSimpanMhs_Click(object sender, EventArgs e)
+        private void buttonSimpan_Click(object sender, EventArgs e)
         {
             string NIM = textBoxNIM.Text?.Trim();
             string Nama = textBoxNama.Text?.Trim();
-            string JenisKelamin = comboBoxJenisKelamin.SelectedItem as string;
+
+            string JenisKelamin = null;
+            if (radioButtonLaki.Checked) JenisKelamin = "Laki-laki";
+            else if (radioButtonPerempuan.Checked) JenisKelamin = "Perempuan";
+
             string Prodi = comboBoxProdi.SelectedItem as string;
 
             if (string.IsNullOrEmpty(NIM))
@@ -72,7 +53,6 @@ namespace Project_PBO_Desktop
             if (string.IsNullOrEmpty(JenisKelamin))
             {
                 MessageBox.Show("Jenis Kelamin tidak boleh kosong.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                comboBoxJenisKelamin.DroppedDown = true;
                 return;
             }
             if (string.IsNullOrEmpty(Prodi))
@@ -92,6 +72,16 @@ namespace Project_PBO_Desktop
         }
 
         private void FormTambahMhs_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

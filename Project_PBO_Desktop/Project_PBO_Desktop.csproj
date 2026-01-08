@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,23 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,8 +51,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net472\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.6.2\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.32.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.32.0\lib\net45\Google.Protobuf.dll</HintPath>
@@ -58,6 +85,7 @@
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
@@ -114,6 +142,18 @@
     <Compile Include="Adm Prodi\FormKelolaSmt.Designer.cs">
       <DependentUpon>FormKelolaSmt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Adm Prodi\FormTambahKK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adm Prodi\FormTambahKK.Designer.cs">
+      <DependentUpon>FormTambahKK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adm Prodi\FormTambahMK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adm Prodi\FormTambahMK.Designer.cs">
+      <DependentUpon>FormTambahMK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Adm Univ\FormAdmUniv.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,13 +178,26 @@
     <Compile Include="Adm Univ\FormKelolaTagihanRegis.Designer.cs">
       <DependentUpon>FormKelolaTagihanRegis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Adm Univ\FormTambahProdi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adm Univ\FormTambahProdi.Designer.cs">
+      <DependentUpon>FormTambahProdi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Adm Univ\FormUbahMhs.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Adm Univ\FormUbahMhs.Designer.cs">
       <DependentUpon>FormUbahMhs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\SiakadContext.cs" />
     <Compile Include="DbConnections.cs" />
+    <Compile Include="Dosen\FormDaftarKKDosen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dosen\FormDaftarKKDosen.Designer.cs">
+      <DependentUpon>FormDaftarKKDosen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dosen\FormDosen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,8 +294,18 @@
     <Compile Include="Mhs\FormTagihan.Designer.cs">
       <DependentUpon>FormTagihan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202512110146039_InitialCreate.cs" />
+    <Compile Include="Migrations\202512110146039_InitialCreate.Designer.cs">
+      <DependentUpon>202512110146039_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202512110158166_InisialisasiAwal.cs" />
+    <Compile Include="Migrations\202512110158166_InisialisasiAwal.Designer.cs">
+      <DependentUpon>202512110158166_InisialisasiAwal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session.cs" />
     <EmbeddedResource Include="Adm Prodi\FormAdmProdi.resx">
       <DependentUpon>FormAdmProdi.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +324,12 @@
     <EmbeddedResource Include="Adm Prodi\FormKelolaSmt.resx">
       <DependentUpon>FormKelolaSmt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Adm Prodi\FormTambahKK.resx">
+      <DependentUpon>FormTambahKK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adm Prodi\FormTambahMK.resx">
+      <DependentUpon>FormTambahMK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Adm Univ\FormAdmUniv.resx">
       <DependentUpon>FormAdmUniv.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,8 +345,14 @@
     <EmbeddedResource Include="Adm Univ\FormManajemenProdi.resx">
       <DependentUpon>FormManajemenProdi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Adm Univ\FormTambahProdi.resx">
+      <DependentUpon>FormTambahProdi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Adm Univ\FormUbahMhs.resx">
       <DependentUpon>FormUbahMhs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dosen\FormDaftarKKDosen.resx">
+      <DependentUpon>FormDaftarKKDosen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dosen\FormDosen.resx">
       <DependentUpon>FormDosen.cs</DependentUpon>
@@ -315,6 +390,12 @@
     <EmbeddedResource Include="Mhs\FormTagihan.resx">
       <DependentUpon>FormTagihan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512110146039_InitialCreate.resx">
+      <DependentUpon>202512110146039_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512110158166_InisialisasiAwal.resx">
+      <DependentUpon>202512110158166_InisialisasiAwal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -338,5 +419,34 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\SiakadDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\SiakadDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>SiakadDB.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
 </Project>

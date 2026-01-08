@@ -21,12 +21,16 @@ namespace Project_PBO_Desktop
         {
             var f = new FormManajemenProdi();
             f.Show();
+
+            this.Hide();
         }
 
         private void buttonManajemenMhs_Click(object sender, EventArgs e)
         {
             var f = new FormManajemenMhs();
             f.Show();
+
+            this.Hide();
         }
 
         private void buttonLogoutAdmUniv_Click(object sender, EventArgs e)
@@ -43,6 +47,21 @@ namespace Project_PBO_Desktop
         }
 
         private void labelAdmUniv_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FormAdmUniv_Load(object sender, EventArgs e)
         {
 
         }
